@@ -15,7 +15,7 @@ const Help = () => {
     e.preventDefault()
    try {
     setLoading(true)
-    const {data} = await axios.post('http://3.237.101.152/api/help',{email,body})
+    const {data} = await axios.post('https://dev.olukowe.co/api/help',{email,body})
     console.log(data.data)
     setMsg(data.message)
     setTimeout(()=>{

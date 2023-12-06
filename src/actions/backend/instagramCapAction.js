@@ -11,7 +11,7 @@ export const addInstagramCapAction = (instagram_caption,project_id) => async(dis
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/instagramCaption`, {instagram_caption,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/instagramCaption`, {instagram_caption,project_id},config)
         dispatch({type:ADD_INSTAGRAMCAP_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getInstagramAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/instagramCaption`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/instagramCaption`,config)
         dispatch({type:GET_INSTAGRAMCAP_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -59,7 +59,7 @@ export const getOneInstagramAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/instagramCaption/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/instagramCaption/${id}`,config)
         dispatch({type:GETONE_INSTAGRAMCAP_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -83,7 +83,7 @@ export const deleteInstagramAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/instagramCaption/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/instagramCaption/${id}`,config)
         dispatch({type:DELETE_INSTAGRAMCAP_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

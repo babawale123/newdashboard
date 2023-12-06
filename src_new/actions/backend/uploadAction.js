@@ -12,7 +12,7 @@ export const adduploadAction = (upload) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/upload`, {upload},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/upload`, {upload},config)
         dispatch({type:ADD_UPLOAD_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -36,7 +36,7 @@ export const getYoutubeAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/youtubeIntro`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/youtubeIntro`,config)
         dispatch({type:GET_YOUTUBE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -60,7 +60,7 @@ export const getOneYoutubeAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/youtubeIntro/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/youtubeIntro/${id}`,config)
         dispatch({type:GETONE_YOUTUBE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -84,7 +84,7 @@ export const deleteYoutubeAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/youtubeIntro/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/youtubeIntro/${id}`,config)
         dispatch({type:DELETE_YOUTUBE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

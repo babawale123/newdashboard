@@ -10,7 +10,7 @@ export const addBlog = (title,number_of_outputs) => async(dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/intro/`,{title,number_of_outputs},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/intro/`,{title,number_of_outputs},config)
         dispatch({type:ADD_BLOGINTRO_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -32,7 +32,7 @@ export const getBlogIntroAction = () => async (dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.get(`http://44.203.107.96/intro/`,config)
+        const {data} = await axios.get(`https://api.olukowe.co/docs/intro/`,config)
         dispatch({type:GET_BLOGINTRO_SUCCESS,payload:data.data})
         console.log(data.data)
 

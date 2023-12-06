@@ -11,7 +11,7 @@ export const blogTopicAddAction = (topic,project_id) => async(dispatch,getState)
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogTopic`, {topic,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogTopic`, {topic,project_id},config)
         dispatch({type:ADD_BLOGTOPIC_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getBlogTopicAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogTopic`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogTopic`,config)
         dispatch({type:GET_BLOGTOPIC_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -59,7 +59,7 @@ export const getOneBlogTopicAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogTopic/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogTopic/${id}`,config)
         dispatch({type:GETONE_BLOGTOPIC_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -83,7 +83,7 @@ export const deleteBlogTopicAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogTopic/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogTopic/${id}`,config)
         dispatch({type:DELETE_BLOGTOPIC_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {

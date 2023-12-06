@@ -80,7 +80,7 @@ const Russian = () => {
             },
         };
         setIsLoading(true)
-        const {data} = await axios.post(`http://44.203.107.96/translation/russian`, {text},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/translation/russian`, {text},config)
         const arrData = [data]
         arrData.forEach((data)=>{
             setLands([data])

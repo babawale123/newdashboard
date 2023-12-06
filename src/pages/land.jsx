@@ -80,7 +80,7 @@ const Land = () => {
             },
         };
         setIsLoading(true)
-        const {data} = await axios.post(`http://44.203.107.96/landing-page/`, {product_name,product_description,feature_benefit_1,feature_benefit_2,feature_benefit_3},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/landing-page/`, {product_name,product_description,feature_benefit_1,feature_benefit_2,feature_benefit_3},config)
         const arrData = [data]
         arrData.forEach((data)=>{
             setLands([data])

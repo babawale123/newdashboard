@@ -11,7 +11,7 @@ export const articleAddAction = (article_rewriter,project_id) => async(dispatch,
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/articleRewriter`, {article_rewriter,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/articleRewriter`, {article_rewriter,project_id},config)
         dispatch({type:ADD_ARTICLEWRITTER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getArticleAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/articleRewriter`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/articleRewriter`,config)
         dispatch({type:GET_ARTICLEWRITTER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -59,7 +59,7 @@ export const getOneArticleAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/articleRewriter/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/articleRewriter/${id}`,config)
         dispatch({type:GETONE_ARTICLEWRITTER_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -83,7 +83,7 @@ export const updateArticleAction = (id,article_rewriter) => async(dispatch,getSt
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.put(`http://3.237.101.152/api/account/${userInfo.data.account_id}/articleRewriter/${id}`,{article_rewriter},config)
+        const {data} = await axios.put(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/articleRewriter/${id}`,{article_rewriter},config)
         dispatch({type:UPDATE_ARTICLEWRITTER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -108,7 +108,7 @@ export const deleteArticleAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/articleRewriter/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/articleRewriter/${id}`,config)
         dispatch({type:DELETE_ARTICLEWRITTER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

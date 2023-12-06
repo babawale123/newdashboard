@@ -10,7 +10,7 @@ export const addProductAction = (product_name,product_features) =>  async(dispat
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/product-description/`,{product_name,product_features},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/product-description/`,{product_name,product_features},config)
         dispatch({type:ADD_PRODUCT_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

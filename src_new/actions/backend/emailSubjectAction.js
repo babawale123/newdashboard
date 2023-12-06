@@ -11,7 +11,7 @@ export const addSubjectAction = (email_subject,project_id) => async(dispatch,get
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/emailSubject`, {email_subject,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/emailSubject`, {email_subject,project_id},config)
         dispatch({type:ADD_EMAILSUBJECT_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getSubjectAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/emailSubject`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/emailSubject`,config)
         dispatch({type:GET_EMAILSUBJECT_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -59,7 +59,7 @@ export const deleteSubjectAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/emailSubject/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/emailSubject/${id}`,config)
         dispatch({type:DELETE_EMAILSUBJECT_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -83,7 +83,7 @@ export const getOneSubjectAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/emailSubject/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/emailSubject/${id}`,config)
         dispatch({type:GETONE_EMAILSUBJECT_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {

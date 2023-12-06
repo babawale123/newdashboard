@@ -10,7 +10,7 @@ export const addContentRephesal = (content,no_of_inputs) => async(dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/rephrase/`,{content,no_of_inputs},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/rephrase/`,{content,no_of_inputs},config)
         dispatch({type:ADD_CONTENTREPRESAL_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

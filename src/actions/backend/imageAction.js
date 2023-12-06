@@ -12,7 +12,7 @@ export const addImageAction = (generated_url,project_id,prompt) => async(dispatc
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/imageGenerator`, {generated_url,prompt,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/imageGenerator`, {generated_url,prompt,project_id},config)
         dispatch({type:ADD_IMAGE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -36,7 +36,7 @@ export const getImageAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/imageGenerator`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/imageGenerator`,config)
         dispatch({type:GET_IMAGE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -60,7 +60,7 @@ export const getOneImageAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/imageGenerator/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/imageGenerator/${id}`,config)
         dispatch({type:GETONE_IMAGE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -84,7 +84,7 @@ export const deleteImageAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/imageGenerator/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/imageGenerator/${id}`,config)
         dispatch({type:DELETE_IMAGE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

@@ -11,7 +11,7 @@ export const addEbook = (topic, no_of_outputs ) =>async(dispatch,getState) =>{
                 //Authorization: `${userInfo.token}`,
             }
         }
-        const {data} = await axios.post(`http://44.203.107.96/topic/`,{topic, no_of_outputs },config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/topic/`,{topic, no_of_outputs },config)
         dispatch({type:ADD_EBOOK_SUCCESS,payload:data.data})
     } catch (error) {
         dispatch({
@@ -35,7 +35,7 @@ export const viewMyEbook = () => async(dispatch,getState) => {
             }
         }
 
-        const {data} = await axios.get(`http://44.203.107.96/topic/`,config)
+        const {data} = await axios.get(`https://api.olukowe.co/docs/topic/`,config)
         dispatch({type:VIEW_EBOOK_SUCCESS,payload:data.data})
         console.log({data})
         

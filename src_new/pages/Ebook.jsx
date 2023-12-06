@@ -67,7 +67,7 @@ const Ebook = () => {
               },
           };
           setIsLoading(true)
-          const {data} = await axios.post(`http://44.203.107.96/ebook/`, {title,description},config)
+          const {data} = await axios.post(`https://api.olukowe.co/docs/ebook/`, {title,description},config)
           const arrData = [data]
           arrData.forEach((data)=>{
             setGenerated([data])

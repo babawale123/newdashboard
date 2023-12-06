@@ -10,7 +10,7 @@ export const addArticleBlog = (article,no_of_outputs) => async(dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/conclusions/`,{article,no_of_outputs},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/conclusions/`,{article,no_of_outputs},config)
         dispatch({type:ADD_ARTICLEBLOG_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

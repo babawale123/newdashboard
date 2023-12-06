@@ -13,7 +13,7 @@ export const addGoogleTitleAction = (title,project_id) => async(dispatch,getStat
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAdTitle`, {title,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAdTitle`, {title,project_id},config)
         dispatch({type:ADD_GOOGLETITLE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -37,7 +37,7 @@ export const getGoogleTitleAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAdTitle`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAdTitle`,config)
         dispatch({type:GET_GOOGLETITLE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -61,7 +61,7 @@ export const getOneGoogleTilteAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAdTitle/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAdTitle/${id}`,config)
         dispatch({type:GETONE_GOOGLETITLE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -85,7 +85,7 @@ export const deleteGoogleTitleAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAdTitle/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAdTitle/${id}`,config)
         dispatch({type:DELETE_GOOGLETITLE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

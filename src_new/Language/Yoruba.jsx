@@ -79,7 +79,7 @@ const Yoruba = () => {
             },
         };
         setIsLoading(true)
-        const {data} = await axios.post(`http://44.203.107.96/translation/yoruba`, {text},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/translation/yoruba`, {text},config)
         const arrData = [data]
         arrData.forEach((data)=>{
             setLands([data])

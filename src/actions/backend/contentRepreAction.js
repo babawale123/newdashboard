@@ -11,7 +11,7 @@ export const addContentRepreAction = (content,project_id) => async(dispatch,getS
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/contentRephraser`, {content,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/contentRephraser`, {content,project_id},config)
         dispatch({type:ADD_CONTENTREPRE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getContentRepreAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/contentRephraser`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/contentRephraser`,config)
         dispatch({type:GET_CONTENTREPRE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -59,7 +59,7 @@ export const getOneContentRepreAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/contentRephraser/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/contentRephraser/${id}`,config)
         dispatch({type:GETONE_CONTENTREPRE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -83,7 +83,7 @@ export const deleteContentRepreAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/contentRephraser/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/contentRephraser/${id}`,config)
         dispatch({type:DELETE_CONTENTREPRE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {

@@ -10,7 +10,7 @@ export const landingPageAction = (product_name,product_description) =>  async(di
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/landing-page-headline/
+        const {data} = await axios.post(`https://api.olukowe.co/docs/landing-page-headline/
         `,{product_name,product_description},config)
         dispatch({type:ADD_LANDINGPAGE_SUCCESS,payload:data.data})
         console.log(data.data)

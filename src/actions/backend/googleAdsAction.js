@@ -12,7 +12,7 @@ export const addGoogleAdsAction = (google_ad,project_id) => async(dispatch,getSt
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAd`, {google_ad,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAd`, {google_ad,project_id},config)
         dispatch({type:ADD_GOOGLEADS_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -36,7 +36,7 @@ export const getGoogleAdsAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAd`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAd`,config)
         dispatch({type:GET_GOOGLEADS_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -60,7 +60,7 @@ export const getOneGoogleAdsAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAd/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAd/${id}`,config)
         dispatch({type:GETONE_GOOGLEADS_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -84,7 +84,7 @@ export const deleteGoogleAdsAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/googleAd/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/googleAd/${id}`,config)
         dispatch({type:DELETE_GOOGLEADS_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

@@ -10,7 +10,7 @@ export const addArticleWriter = (title,intro,sections) => async(dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/article/`,{title,intro,sections},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/article/`,{title,intro,sections},config)
         dispatch({type:ADD_BLOGARTICLEWRITER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

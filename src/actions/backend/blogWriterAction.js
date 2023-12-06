@@ -11,7 +11,7 @@ export const blogWriterAddAction = (article,project_id) => async(dispatch,getSta
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogArticle`, {article,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogArticle`, {article,project_id},config)
         dispatch({type:ADD_BLOGWRITER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getBlogWriterAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogArticle`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogArticle`,config)
         dispatch({type:GET_BLOGWRITER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -60,7 +60,7 @@ export const getOneBlogAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogArticle/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogArticle/${id}`,config)
         dispatch({type:GETONE_BLOGWRITER_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -84,7 +84,7 @@ export const deleteBlogAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogArticle/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogArticle/${id}`,config)
         dispatch({type:DELETE_BLOGWRITER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -108,7 +108,7 @@ export const updateBlogAction = (article) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.put(`http://3.237.101.152/api/account/${userInfo.data.account_id}/blogArticle/${article}`,{article},config)
+        const {data} = await axios.put(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/blogArticle/${article}`,{article},config)
         dispatch({type:UPDATE_BLOGWRITER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

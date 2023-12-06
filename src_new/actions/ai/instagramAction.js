@@ -11,7 +11,7 @@ export const InstagramAction = (product_description,tone_of_voice) => async(disp
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/instagram-caption/`,{product_description,tone_of_voice},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/instagram-caption/`,{product_description,tone_of_voice},config)
         dispatch({type:ADD_INSTAGRAM_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

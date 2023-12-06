@@ -11,7 +11,7 @@ export const addTweetAction = (tweet,project_id) => async(dispatch,getState) => 
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/tweetGenerator`, {tweet,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/tweetGenerator`, {tweet,project_id},config)
         dispatch({type:ADD_TWEETGEN_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ export const getTweetAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/tweetGenerator`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/tweetGenerator`,config)
         dispatch({type:GET_TWEETGEN_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -59,7 +59,7 @@ export const getOneTweetAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/tweetGenerator/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/tweetGenerator/${id}`,config)
         dispatch({type:GETONE_TWEETGEN_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -83,7 +83,7 @@ export const deleteTweetAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/tweetGenerator/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/tweetGenerator/${id}`,config)
         dispatch({type:DELETE_TWEETGEN_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

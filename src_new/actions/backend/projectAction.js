@@ -11,7 +11,7 @@ export const projectAction = (name,status) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/project`, {name,status},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/project`, {name,status},config)
         dispatch({type:ADD_PROJECT_SUCCESS,payload:data.data})
         //localStorage.setItem('projectInfo', JSON.stringify(data))
         console.log(data.data)
@@ -37,7 +37,7 @@ export const getProjectAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/project`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/project`,config)
         dispatch({type:GET_PROJECT_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -61,7 +61,7 @@ export const getOneProjectAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/project/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/project/${id}`,config)
         dispatch({type:GETONE_PROJECT_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -85,7 +85,7 @@ export const deleteProjectAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/project/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/project/${id}`,config)
         dispatch({type:DELETE_PROJECT_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

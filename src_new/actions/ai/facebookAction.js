@@ -11,7 +11,7 @@ export const facebookAction = (product_name,product_description,occasion,promoti
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/facebook-ad/`,{product_name,product_description,occasion,promotion},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/facebook-ad/`,{product_name,product_description,occasion,promotion},config)
         dispatch({type:ADD_FACEBOOK_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

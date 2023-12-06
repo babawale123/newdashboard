@@ -12,7 +12,7 @@ export const addLandingPageAction = (page,project_id) => async(dispatch,getState
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.post(`http://3.237.101.152/api/account/${userInfo.data.account_id}/landingPage`, {page,project_id},config)
+        const {data} = await axios.post(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/landingPage`, {page,project_id},config)
         dispatch({type:ADD_LANDINGPAGE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -36,7 +36,7 @@ export const getLandingPageAction = () => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/landingPage`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/landingPage`,config)
         dispatch({type:GET_LANDINGPAGE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {
@@ -60,7 +60,7 @@ export const getOneLangingPageAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.get(`http://3.237.101.152/api/account/${userInfo.data.account_id}/landingPage/${id}`,config)
+        const {data} = await axios.get(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/landingPage/${id}`,config)
         dispatch({type:GETONE_LANDINGPAGE_SUCCESS,payload:[data.data]})
         console.log(data.data)
     } catch (error) {
@@ -84,7 +84,7 @@ export const deleteLandingPageAction = (id) => async(dispatch,getState) => {
                 Authorization:`Bearer ${userInfo.data.token}`
             }
         }
-        const {data} = await axios.delete(`http://3.237.101.152/api/account/${userInfo.data.account_id}/landingPage/${id}`,config)
+        const {data} = await axios.delete(`https://dev.olukowe.co/api/account/${userInfo.data.account_id}/landingPage/${id}`,config)
         dispatch({type:DELETE_LANDINGPAGE_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

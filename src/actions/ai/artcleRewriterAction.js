@@ -10,7 +10,7 @@ export const addArticleRewriter= (content) => async(dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/rewriter/`,{content},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/rewriter/`,{content},config)
         dispatch({type:ADD_ARTICLEREWRITER_SUCCESS,payload:data.data})
         console.log(data.data)
     } catch (error) {

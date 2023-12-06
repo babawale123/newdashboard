@@ -11,7 +11,7 @@ export const ebookAction = (title,description) => async(dispatch) => {
                 'Content-type':'application/x-www-form-urlencoded'
             },
         };
-        const {data} = await axios.post(`http://44.203.107.96/ebook/`, {title,description},config)
+        const {data} = await axios.post(`https://api.olukowe.co/docs/ebook/`, {title,description},config)
         dispatch({type:ADD_EBOOK_SUCCESS,payload:data.data})
         console.log(data)
         //console.log(error)

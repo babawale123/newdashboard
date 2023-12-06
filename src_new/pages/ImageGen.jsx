@@ -66,7 +66,7 @@ const ImageGen = () => {
             },
         };
         setIsLoading(true)
-        const {data} = await axios.post(`http://44.203.107.96/image-generator/
+        const {data} = await axios.post(`https://api.olukowe.co/docs/image-generator/
         `, {prompt},config)
         const arrData = [data]
         arrData.forEach((data)=>{
